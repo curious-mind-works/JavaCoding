@@ -6,7 +6,10 @@ public class StringFunction {
     {
 
         String s1 = "Ankit";
-        String s2 = new String("");
+        String s2 = new String("Ankit");
+
+        System.out.println(s1==s2);  //false
+        System.out.println(s1.equals(s2)); //true
 
 
 
