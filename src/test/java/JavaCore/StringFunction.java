@@ -41,5 +41,64 @@ public class StringFunction {
 
        // Content is same ("Ankit")
 
+        String s1 = "Ankit";
+String s2 = "An" + "kit";
+
+System.out.println(s1 == s2);
+
+        👉 Answer: true
+✅ Reason: compile-time optimization → goes to String pool
+
+            String s1 = "Ankit";
+String s2 = "An";
+String s3 = s2 + "kit";
+
+System.out.println(s1 == s3);
+
+        👉 Answer: false
+✅ Reason: runtime concatenation → heap object
+
+            
+String s = "Ankit";
+s.concat(" Sharma");
+
+System.out.println(s);
+👉 Answer: Ankit
+✅ Reason: Strings are immutable
+
+    
+String s = "Ankit";
+s = s.concat(" Sharma");
+
+System.out.println(s);
+System.out.println(s);Show more lines
+👉 Answer: Ankit Sharma
+
+    String s1 = "Hello";
+String s2 = "World";
+String s3 = "HelloWorld";
+String s4 = s1 + s2;
+
+System.out.println(s3 == s4);
+        👉 Answer: false
+✅ runtime concatenation → new object
+
+            
+String s1 = "HelloWorld";
+String s2 = "Hello" + "World";
+
+System.out.println(s1 == s2);
+👉 Answer: true
+✅ compile-time → same pool
+
+    
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+
+System.out.println(sb);
+
+        👉 Output: Hello World
+            
+
     }
 }
