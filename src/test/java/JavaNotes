@@ -1,0 +1,418 @@
+String:-
+----------------------------------------------------------------------------------------------------------------------
+In Java, String is a class, not a primitive type. Strings are sequences of characters.
+
+1) String (Immutable):-
+
+> String objects are immutable, meaning once created, their content cannot be changed.
+> Any operation that appears to modify a String (e.g., concatenation) actually creates a new String object.
+> This immutability makes String objects thread-safe and suitable for use as keys in HashMaps.
+
+String Pool:-
+------------
+> Java maintains a "String Pool" in the Heap to optimize memory usage.
+When you create a String literal (e.g., String s = "hello";), the JVM first checks if
+"hello" already exists in the pool. If it does, it returns a reference to the existing
+object; otherwise, it creates a new one and puts it in the pool.
+> Using new String("hello") always creates a new object in the Heap, even if "hello" is
+in the String Pool.
+
+2) StringBuffer (Mutable, Thread-Safe):-
+---------------------------------------
+
+> Similar to StringBuilder in functionality (mutable).
+> Thread-safe: All its public methods are synchronized. This makes it suitable for multithreaded environments,
+but it comes with a performance overhead compared to StringBuilder.
+> When to use: In a single-threaded environment, StringBuilder is preferred for performance.
+In a multi-threaded environment where multiple threads might modify the same string, StringBuffer is safer.
+
+3) StringBuilder (Mutable, Not Thread-Safe):-
+--------------------------------------------
+
+> Used when we need to perform many modifications to a string.
+> Provides methods like append(), insert(), delete(), reverse().
+> More efficient for string manipulation than String concatenation because it avoids
+creating many intermediate String objects.
+
+Not thread-safe: If multiple threads modify a StringBuilder concurrently, it can lead
+to inconsistent results.
+
+Exceptional Handling:-
+--------------------------------------------------------------------------------------------------------------------------------
+Exception handling allows developers to manage runtime errors
+effectively by using mechanisms like try-catch block, finally block, throwing Exceptions, Custom Exception handling, etc.
+
+An Exception is an unwanted or unexpected event that occurs during the execution of a program (i.e., at runtime)
+
+> try block:- Contains the code that might throw an exception.
+> catch block:- Catches specific types of exceptions thrown in the try block. We can have
+multiple catch blocks for different exception types (most specific first).
+> finally block: Always executes, regardless of whether an exception occurred or was caught.
+Used for cleanup code (e.g., closing resources like file streams, database connections).
+> throw keyword: Used to explicitly throw an exception from your code.
+> throws keyword: Used in a method signature to declare that a method might throw one or
+more specified checked exceptions. The caller of the method must then either handle or redeclare these exceptions.
+
+Types of Exceptions:-
+
+Checked Exceptions: (Compile Exceptions)-
+-------------------
+Checked exceptions are called compile-time exceptions because these exceptions are checked at compile-time by the compiler.
+Examples of Checked Exception are listed below:
+
+ClassNotFoundException: Throws when the program tries to load a class at runtime but the class is not found
+because it's belong not present in the correct location or it is missing from the project.
+InterruptedException: Thrown when a thread is paused and another thread interrupts it.
+IOException: Throws when input/output operation fails
+InstantiationException: Thrown when the program tries to create an object of a class but fails
+because the class is abstract, an interface, or has no default constructor.
+SQLException: Throws when there's an error with the database.
+FileNotFoundException: Thrown when the program tries to open a file that doesnʼt exist
+
+Unchecked Exceptions (Runtime Exceptions):-
+------------------------------------------
+The unchecked exceptions are just opposite to the checked exceptions. The compiler will not check these exceptions at compile time.
+In simple words, if a program throws an unchecked exception, and even if we didn't handle or declare it,
+the program would not give a compilation error. Examples of Unchecked
+
+Exception are listed below:
+
+ArithmeticException: It is thrown when there's an illegal math operation.
+ClassCastException: It is thrown when you try to cast an object to a class it does not belongThis to.
+NullPointerException: It is thrown when you try to use a null object (e.g. accessing its methods or fields)
+ArrayIndexOutOfBoundsException: ThisThis occurs when we try to access an array element with an invalid index.
+ArrayStoreException: This handle happens when you store an object of the wrong type in an array.
+IllegalThreadStateException: It is thrown when a thread operation is not allowed in its current state
+
+
+Custom Exceptions:-
+------------------
+You can create your own exception classes by extending Exception (for checked) or RuntimeException (for unchecked).
+
+Access Modifiers:-
+---------------------------------------------------------------------------------------------------------------------------
+Access Modifiers are the keywords that set the accessibility (visibility) of classes, variable, methods, and constructors.
+
+There are 4 types of Access Modifier
+
+1) public:-
+----------
+Public Access Modifier can be assess from anywhere (within the same class, same package, subclasses, and different packages).
+
+2) private:-
+-----------
+Private Access Modifier can be access within the same class. and it is used for encapsulation.
+
+3) protected:-
+-------------
+Protected Access Modifier within the same package and by subclasses of another package by using inheritance
+(even if in different packages).
+
+4) Default (No keyword):-
+------------------------
+When we do not use any access modifier with variable it becomes default and it can be access within the same package.
+Often called "package private".
+
+this and super Keywords
+----------------------------------------------------------------------------------------------------------------------------
+this keyword:-
+-------------
+>  Refers to the current object (the object on which the method is invoked).
+
+o Uses:-
+
+> To differentiate between instance variables and local variables if they have
+the same name (this.variable = variable;).
+> To invoke the current class's constructor from another constructor in the
+same class (this(); or this(args);).
+> To pass the current object as an argument to a method.
+> To return the current object from a method.
+
+super keyword:-
+--------------
+> Refers to the immediate parent class object.
+
+o Uses:-
+
+> To call the parent class's constructor (super(); or super(args); must be the
+  first statement in a child class constructor).
+> To invoke the parent class's method if it's overridden in the child class
+  (super.methodName();).
+> To access parent class's instance variables if they are hidden by a child class's
+  variables of the same name (super.variableName;)
+
+Static Keyword:-
+------------------------------------------------------------------------------------------------------------------------
+Static Keyword is a non-access modifier that is applicable to variable, methods, blocks, and nested classes. It makes a member
+belong to the class itself rather than to any specific instance.
+
+1) static variable:-
+-------------------
+> Also known as a class variable.
+> Shared by all instances of the class. Only one copy exists.
+> Initialized once when the class is loaded.
+> Can be accessed directly by the class name (e.g., ClassName.staticVariable).
+
+2) static method:-
+-----------------
+> Belongs to the class, not an object.
+> Can be called directly using the class name (e.g., ClassName.staticMethod();).
+> Cannot access non-static (instance) variables or non-static methods directly
+  because they belong to an object which might not exist when the static method is
+  called.
+> Can only access other static members (variables and methods).
+> Cannot use this or super keywords.
+> Can a static method be overridden? No. Method overriding is a runtime
+polymorphism concept that applies to instance methods associated with objects.
+Static methods are resolved at compile time based on the reference type, not the
+actual object type. This is called "method hiding" if a subclass defines a static
+method with the same signature.
+
+3) static block:-
+----------------
+> Used to initialize static variables.
+> Executes only once when the class is loaded into memory.
+> Can have multiple static blocks; they execute in the order they appear.
+
+4) static nested class (Nested Static Class):-
+---------------------------------------------
+> A static class defined inside another class.
+> Does not require an outer class instance to be created.
+> Can access only static members of the outer class.
+
+Final Keyword:-
+-----------------------------------------------------------------------------------------------------------------------
+Final Keyword is a non-access modifier and It is used to restrict changes.
+
+It can be applied to:-
+1) Variables
+2) Methods
+3) Classes
+
+1) final variable:-
+------------------
+> The value of a final variable can be assigned only once. It becomes a constant.
+> Must be initialized at the time of declaration, in a constructor (for instance final
+  variables), or in a static block (for static final variables).
+
+2) final method:-
+----------------
+> A final method cannot be overridden by subclasses.
+> Used when you want to ensure that a method's implementation remains consistent
+across all subclasses.
+
+3) final class:-
+---------------
+> A final class cannot be subclassed (inherited from).
+> Used to prevent inheritance and ensure security or immutability (e.g., String class is final).
+
+OOPS Concepts:-
+------------------------------------------------------------------------------------------------------------------------
+The primary goal of OOP is to increase the flexibility and maintainability of programs.
+
+Four Pillars of OOPs:-
+---------------------
+
+These are the core principles that define object-oriented programming.
+
+1) Encapsulation:-
+-----------------
+It is the process of binding data (attributes/fields) and the methods that operate on that data
+into a single unit (a class), and keeping them safe from outside interference and misuse.
+
+Implementation of Encapsulation in Java
+
+Declare data as private:-
+------------------------
+Hide the class data so it cannot be accessed directly from outside the class.
+
+Use getters and setters:-
+------------------------
+Keep variables private and provide public getter and setter methods for controlled access and safe modification,
+often with validation.
+
+Inheritance:-
+------------
+It is the mechanism by which one class acquires the properties (fields) and behaviors
+(methods) of another class.
+
+• Keywords:
+> extends: Used by a class to inherit from another class.
+> implements: Used by a class to implement an interface.
+
+Types of Inheritance (in terms of class hierarchy):-
+---------------------------------------------------
+
+1) Single Inheritance:- A class inherits from only one direct parent class.
+2) Multilevel Inheritance:- A class inherits from a class, which in turn inherits from
+another class (e.g., A -> B -> C).
+3) Hierarchical Inheritance:- Multiple classes inherit from a single parent class.
+4) Multiple Inheritance:- A class inheriting from multiple direct parent classes. Java
+does NOT support multiple inheritance for classes to avoid the "diamond problem"
+(ambiguity if parent classes have methods with same signature).
+5) Hybrid Inheritance:- A mix of two or more types of inheritance.
+
+3) Polymorphism:- (Many Forns)
+----------------
+It refers to the ability of an object to take on many forms
+
+Types of Polymorphism in Java:-
+
+1) Compile-time Polymorphism (Static Polymorphism / Method Overloading):-
+
+> It Occurs when there are multiple methods in the same class with
+the same name but different method signatures (different number of
+parameters, different types of parameters, or different order of parameters).
+> The compiler decides which method to call based on the arguments passed
+at compile time.
+
+2) Runtime Polymorphism (Dynamic Polymorphism / Method Overriding):-
+
+> It Occurs when a subclass provides a specific implementation for a
+method that is already defined in its superclass. The method signature
+(name, return type, parameters) must be exactly the same.
+> The decision of which method to call is made at runtime based on the actual
+object type, not the reference type. This is also known as "Dynamic Method
+Dispatch."
+
+Rules for Overriding:-
+▪ Method must have the same name, same parameters, and same
+return type.
+▪ Access modifier cannot be more restrictive than the overridden
+method.
+▪ final or static methods cannot be overridden.
+▪ Constructors cannot be overridden.
+
+
+4) Abstraction:-
+---------------
+It is process of hiding the implementation details and showing only the essential
+features of an object to the user. It focus on what an object does rather than how it does it.
+
+We can achieve abstraction by abstract class & interface
+
+1) Abstract Classes:-
+--------------------
+> An abstract class is a class that is declared with the abstract keyword.
+> An abstract method is a method that is declared without body.
+> An abstract class may have both abstract methods (methods without implementation) and concrete methods (methods with implementation).
+> An abstract cannot be instantiated (you cannot create objects of an abstract class).
+> An abstract class can have parameterized constructors and the default constructor is always present in an abstract class.
+> An abstract class can have instance variables and static variables.
+> A subclass of an abstract class must either implement all its abstract methods or also be declared abstract.
+> It represents a partial implementation (base class for other classes).
+
+2) Interfaces:-
+--------------
+> An interface is declared with interface keyword.
+> All methods in an interface are implicitly public and abstract (by default).
+> All variables in an interface are public, static, and final (constants only).
+> An interface cannot have constructors (because we cannot create objects of an interface).
+> A class uses the implements keyword to implement an interface.
+> A class implementing an interface must implement all its abstract methods, otherwise the class must be declared abstract.
+> Java supports multiple inheritance using interfaces (a class can implement multiple interfaces).
+> An interface represents a contract — any class implementing it must provide the defined behaviors.
+
+
+When to Use Which:-
+
+Abstract Class:- Use when you want to provide a base class with some common
+functionality implemented, but also enforce that subclasses implement specific
+methods.
+
+Interface: Use when you want to define a contract that multiple unrelated classes
+can adhere to. Ideal for defining capabilities or behaviors that can be shared across
+different class hierarchies.
+
+----------------------------------------------------------------------------------------------------------------------
+Constructor:-
+------------
+A Constructor is special type of method used to initialize objects. It's invoked automatically when
+an object of a class is created using the new keyword.
+
+Rules:-
+> Must have the same name as the class.
+> Has no return type (not even void).
+> Cannot be static, final, abstract, or synchronized.
+
+Types of Constructors:-
+----------------------
+
+1) Default Constructor:- If we don't define any constructor, Java automatically provides
+a public, no-argument default constructor. It initializes instance variables to their
+default values.
+
+2) No-argument Constructor:- A constructor explicitly defined by you that takes no
+arguments.
+
+3) Parameterized Constructor:- A constructor that takes arguments. Used to initialize
+instance variables with specific values provided at object creation.
+
+> Constructor Overloading: A class can have multiple constructors with the same name but
+different parameter lists (just like method overloading).
+
+> Constructor Chaining:-
+o Using this(): To call another constructor of the same class.
+o Using super(): To call a constructor of the parent class. super() or super(args) must
+be the first statement in a child class constructor.
+
+Collection:-
+----------------------------------------------------------------------------------------------------------
+
+Collections
+---------------------------------------------------------------------------------------------------------------------
+
+🔹 List – Properties (Java Collection)
+
+Ordered collection – maintains insertion order
+Allows duplicate elements
+Allows multiple null values
+Index-based – elements can be accessed using index
+Good for storing ordered data where duplicates matter
+
+Common implementations:
+
+ArrayList – fast access, slower insert/delete in middle
+LinkedList – fast insert/delete, slower access
+Vector – synchronized (legacy)
+
+Typical use case:
+When order matters and duplicates are allowed (e.g., list of students, products).
+
+🔹 Set – Properties (Java Collection)
+
+Does NOT allow duplicate elements
+No index-based access
+Allows at most one null value (depends on implementation)
+Used to store unique elements
+Insertion order is not guaranteed (except some implementations)
+
+Common implementations:
+
+HashSet – no order, fast performance
+LinkedHashSet – maintains insertion order
+TreeSet – sorted order (ascending by default)
+
+Typical use case:
+
+When uniqueness is required (e.g., unique IDs, email addresses).
+
+🔹 Map – Properties (Java Collection)
+
+Stores data in key–value pairs
+Keys must be unique
+Values can be duplicated
+One null key allowed (HashMap), multiple null values allowed
+Not a child of Collection interface
+Used for fast searching using keys
+
+Common implementations:
+
+HashMap – no order, fast
+LinkedHashMap – maintains insertion order
+TreeMap – sorted by keys
+Hashtable – synchronized, legacy
+
+Typical use case:
+
+When data needs to be stored as key–value pairs (e.g., username → password).

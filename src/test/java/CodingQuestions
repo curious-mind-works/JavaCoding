@@ -1,0 +1,51 @@
+🔹 BASIC JAVA CODING QUESTIONS
+
+1. How do you reverse a string in Java?
+2. How do you check if a string is a palindrome?
+3. How do you count vowels and consonants in a string?
+4. How do you reverse a number in Java?
+5. How do you check whether a number is a palindrome?
+6. How do you swap two numbers with and without using a third variable?
+7. How do you find the largest of three numbers?
+8. How do you print the Fibonacci series?
+9. How do you check whether a number is prime?
+10. How do you find the factorial of a number?
+
+🔹 STRING-BASED QUESTIONS (VERY COMMON)
+
+11. How do you count the occurrence of each character in a string?
+12. How do you find duplicate characters in a string?
+13. How do you find the first non-repeated character in a string?
+14. How do you reverse each word in a sentence?
+15. How do you check whether two strings are anagrams?
+16. How do you remove duplicate characters from a string?
+17. How do you remove special characters from a string?
+18. How do you convert a string to lowercase or uppercase without using built-in methods?
+19. How do you count the number of words in a sentence?
+20. How do you replace spaces in a string with a special character?
+
+🔹 ARRAY-BASED QUESTIONS
+
+21. How do you find the maximum and minimum elements in an array?
+22. How do you sort an array without using built-in sort methods?
+23. How do you find duplicate elements in an array?
+24. How do you remove duplicates from an array?
+25. How do you find the second largest number in an array?
+26. How do you find the sum of all elements in an array?
+27. How do you check if an array is already sorted?
+28. How do you reverse an array?
+29. How do you move all zeros to the end of an array?
+30. How do you compare two arrays for equality?
+
+🔹 NUMBER & LOGICAL QUESTIONS
+
+31. How do you check whether a number is an Armstrong number?
+32. How do you check whether a number is a perfect number?
+33. How do you find the sum of digits of a number?
+34. How do you reverse the digits of a number?
+35. How do you count the number of digits in a number?
+36. How do you check whether a number is even or odd without using the modulo operator?
+37. How do you generate a random number within a given range?
+38. How do you find a missing number in an array?
+39. How do you print star and number patterns?
+40. How do you calculate the power of a number?

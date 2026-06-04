@@ -1,0 +1,115 @@
+String
+--------------------------------------------------------------------------------------------------------
+
+Creation
+String str = "Hello";
+String str2 = new String("World");
+
+Length
+int len = str.length(); // number of characters
+
+Character Access
+char ch = str.charAt(0); // first character
+
+Comparison
+str.equals("Hello"); // case-sensitive
+str.equalsIgnoreCase("hello");
+
+str.compareTo("World"); // lexicographical
+
+Searching
+str.contains("ell");
+str.indexOf("l");
+str.lastIndexOf("l");
+str.startsWith("He");
+str.endsWith("lo");
+
+Substring
+String sub = str.substring(1); // "ello"
+String sub2 = str.substring(1, 4); // "ell"
+
+Replace
+str.replace("l", "x"); // "Hexxo"
+str.replaceAll("\s+", "_"); // regex replace spaces
+
+Case Conversion
+str.toUpperCase();
+str.toLowerCase();
+
+Trim
+"  Hello  ".trim(); // "Hello"
+
+Split
+String[] parts = "a,b,c".split(",");
+
+Join
+String joined = String.join("-", "a", "b", "c"); // "a-b-c"
+
+Empty & Blank Check
+str.isEmpty();
+str.isBlank(); // Java 11+
+
+String to Char Array
+char[] arr = str.toCharArray();
+
+
+int,float,double,char ----------> String Conversions (Multiple Ways)
+int n = 42;
+float n = 42.0f;
+double n = 42.00;
+char n = 'a'
+
+// 1) Using String.valueOf
+String s1 = String.valueOf(n);
+
+// 2) Using Integer.toString change first According to Float, Double, Character
+String s2 = Integer.toString(n);
+
+// 3) Using concatenation ("" + n)
+String s3 = "" + n;
+
+
+String -----------> int,float,double Conversions
+
+String s = "123";
+int num = Integer.parseInt(s);
+
+String s = "10.5";
+float f = Float.parseFloat(s);
+
+String s = "10.5";
+double f = Double.parseDouble(s);
+
+Array declare ways;
+-------------------------------------------------------------------------------------------------------------
+
+An array is a collection of elements of the same data type stored in contiguous memory locations.
+
+//Declaration
+int arr[]; // Declaration only
+int[] arr; // Same as above (recommended)
+
+//Initialize
+arr = new int[5];
+arr = new int[]{1, 2, 3, 4};
+
+arr = {1, 2, 3}; // Not Allowed Compile Error
+
+int[] arr = {1, 2, 3, 4, 5}; // Declare + initialize
+int[] arr = new int[5]; // Create array of size 5 with zeros
+int arr[] = new int[]{1, 2, 3}; // Explicit creation with values
+
+// Array of Same data Types -
+float[] prices = {10.5f, 20.75f, 30.0f};
+double[] marks = {85.5, 90.25, 78.0};
+String[] names = {"Ankit", "Rahul", "Amit"};
+char[] grades = {'A', 'B', 'C'};
+
+//length
+int length = arr.length;
+
+Regular Expressions
+-------------------------------------------------------------------------------------------------------------------
+
+Check Regression Folder -
+
