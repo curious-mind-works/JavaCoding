@@ -1,3 +1,11 @@
+Java is a high-level, object-oriented, platform-independent language.
+
+JVM (Java Virtual Machine) → Runs Java bytecode
+JRE (Java RunTime Environment) → JVM + libraries to run programs
+JDK (Java Development Kit) → JRE + development tools (compiler, debugger)
+
+Runing of java Programme
+
 String:-
 ----------------------------------------------------------------------------------------------------------------------
 In Java, String is a class, not a primitive type. Strings are sequences of characters.
@@ -355,6 +363,10 @@ different parameter lists (just like method overloading).
 o Using this(): To call another constructor of the same class.
 o Using super(): To call a constructor of the parent class. super() or super(args) must
 be the first statement in a child class constructor.
+
+Others Concepts -
+
+finalize: - Map is part of the Java Collections Framework, but it is not a subtype of Collection.
 
 Collection:-
 ----------------------------------------------------------------------------------------------------------
