@@ -368,25 +368,18 @@ to store and manipulate groups of objects efficiently.
 > Improves code reusability and performance by reducing boilerplate code.
 
 Types of Collections in Java : -
-Java Collection Framework provides different types of interfaces and classes:
 
 Interfaces: -
 
-List 
-Set
-Queue
+List                          Set                              Queue
 
 Classes: -
 
-ArrayList
-Vector
-LinkedList
-PriorityQueue
-HashSet
-LinkedHashSet
-TreeSet
+ArrayList                    HashSet                         PriorityQueue
+LinkedList                   LinkedHashSet
+Vector                       TreeSet
 
-List – Properties (Java Collection)
+List – 
 
 Ordered collection – maintains insertion order
 Allows duplicate elements
@@ -403,7 +396,7 @@ Vector – synchronized (legacy)
 Typical use case:
 When order matters and duplicates are allowed (e.g., list of students, products).
 
-Set – Properties (Java Collection)
+Set –
 
 Does NOT allow duplicate elements
 No index-based access
@@ -421,7 +414,7 @@ Typical use case:
 
 When uniqueness is required (e.g., unique IDs, email addresses).
 
-Map – Properties (Java Collection)
+Map – Map is part of the Java Collections Framework, but it is not a subtype of Collection.
 
 Stores data in key–value pairs
 Keys must be unique
