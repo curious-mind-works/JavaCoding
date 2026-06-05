@@ -358,11 +358,35 @@ be the first statement in a child class constructor.
 
 Collection:-
 ----------------------------------------------------------------------------------------------------------
+Java Collection Framework (JCF) is a set of classes and interfaces that provide ready-made data structures
+to store and manipulate groups of objects efficiently.
 
-Collections
----------------------------------------------------------------------------------------------------------------------
+> Provides ready-to-use data structures (e.g., ArrayList, HashSet, HashMap).
+> Offers interfaces (Collection, List, Set, Map, Queue) to define standard behaviors.
+> Supports dynamic resizing, unlike arrays with a fixed size.
+> Includes algorithms (sorting, searching, iteration) via the Collections utility class.
+> Improves code reusability and performance by reducing boilerplate code.
 
-🔹 List – Properties (Java Collection)
+Types of Collections in Java : -
+Java Collection Framework provides different types of interfaces and classes:
+
+Interfaces: -
+
+List 
+Set
+Queue
+
+Classes: -
+
+ArrayList
+Vector
+LinkedList
+PriorityQueue
+HashSet
+LinkedHashSet
+TreeSet
+
+List – Properties (Java Collection)
 
 Ordered collection – maintains insertion order
 Allows duplicate elements
@@ -379,7 +403,7 @@ Vector – synchronized (legacy)
 Typical use case:
 When order matters and duplicates are allowed (e.g., list of students, products).
 
-🔹 Set – Properties (Java Collection)
+Set – Properties (Java Collection)
 
 Does NOT allow duplicate elements
 No index-based access
@@ -397,7 +421,7 @@ Typical use case:
 
 When uniqueness is required (e.g., unique IDs, email addresses).
 
-🔹 Map – Properties (Java Collection)
+Map – Properties (Java Collection)
 
 Stores data in key–value pairs
 Keys must be unique
@@ -411,7 +435,6 @@ Common implementations:
 HashMap – no order, fast
 LinkedHashMap – maintains insertion order
 TreeMap – sorted by keys
-Hashtable – synchronized, legacy
 
 Typical use case:
 
