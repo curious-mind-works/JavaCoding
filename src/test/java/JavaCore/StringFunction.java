@@ -22,9 +22,24 @@ public class StringFunction {
         "hello" already exists in the pool. If it does, it returns a reference to the existing
         object; otherwise, it creates a new one and puts it in the pool.
        > Using new String("hello") always creates a new object in the Heap, even if "hello" is
-        in the String Pool. */
+        in the String Pool. 
 
-        
+	    Memory Location Difference
+       1. String s1 = "Ankit";
+
+       Stored in the String Constant Pool (SCP)
+       Java reuses same object if value already exists
+
+       Efficient memory usage
+
+       String s2 = new String("Ankit");
+
+       Creates two objects:
+
+      "Ankit" in String Pool (if not already present)
+       A new object in Heap memory
+       s2 points to the heap object, NOT the pool */
+		        
         String s1 = "Ankit"; //liternal
         String s2 = new String("Ankit"); //Using new Keyword
         String s3 = "Ankit";
@@ -91,27 +106,6 @@ public class StringFunction {
         System.out.println(s);
        // Answer: Ankit Sharma
 
-    String s1 = "Hello";
-    String s2 = "World";
-    String s3 = "HelloWorld";
-    String s4 = s1 + s2;
-
-    System.out.println(s3 == s4); //flase
-       
-    // runtime concatenation → new object
-
-            
-    String s1 = "HelloWorld";
-    String s2 = "Hello" + "World";
-
-    System.out.println(s1 == s2); //true
-
-   // compile-time → same pool
-   
-    String s1 = "Hello";
-    s1.concat(" World");
-
-    System.out.println(s1); //Hello
          
     StringBuilder sb = new StringBuilder("Hello");
     sb.append(" World");
