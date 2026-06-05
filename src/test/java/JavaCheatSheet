@@ -122,20 +122,59 @@ System.out.println(s.matches("[a-z]"));
 // single character can be in range
 System.out.println(s.matches("[a-zA-Z0-9]"));
 
-String a = "sanuverma@com";
-
-System.out.println(a.matches("[a-z]{5,}[@]com"));
-
-String b = " ";
-
-System.out.println(b.matches("\\s"));
-
 Collections -
 -------------------------------------------------------------------------------------------------------------------
+List -
 
-  Map<Integer, String> map = new HashMap<>();
-  map.put();
-     // 1️ Using entrySet()
+  List<String> list = new ArrayList<>();
+
+
+ Set<String> set = new HashSet<>();
+
+        // add(element)
+
+        set.add("Java");
+        set.add("Selenium");
+        set.add("Java"); // duplicate → ignored
+
+       // addAll(elements)
+
+        set.addAll(Set.of("API", "TestNG"));
+
+        //Iterating a Set
+
+        //1️ Enhanced for-each loop
+
+        for (String value : set) {
+            System.out.println(value);
+        }
+
+        //2 Using Iterator
+
+        Iterator<String> it = set.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+    }
+
+   
+        Map<Integer, String> map = new HashMap<>();
+
+        //Adding Elements to Map
+
+        //put(key, value)
+        map.put(1, "Java");
+        map.put(2, "Selenium");
+        map.put(3, "REST Assured");
+
+        //Duplicate key (value gets replaced)
+         map.put(2, "TestNG"); // Selenium replaced
+
+       // putIfAbsent()
+         map.putIfAbsent(4, "API");
+
+       // 1️ Using entrySet()
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
         }
