@@ -4,7 +4,43 @@ JVM (Java Virtual Machine) → Runs Java bytecode
 JRE (Java RunTime Environment) → JVM + libraries to run programs
 JDK (Java Development Kit) → JRE + development tools (compiler, debugger)
 
-Runing of java Programme
+Running of java Programme
+
+Code - Hello.java
+
+class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+ 
+}
+
+1 Step: - Compilation (javac)
+-----------------------------
+Command - javac Hello.java
+
+> Java compiler (javac) checks for errors 
+> Converts .java file into bytecode
+> Generates file: - Hello.class
+> .class file contains bytecode
+> Bytecode is platform independent
+
+2 Step: - Execution (java)
+--------------------------
+Command - java Hello
+
+Inside JVM (Execution Process)
+------------------------------
+When you run the program:
+🔹 Step 1: Class Loader
+
+Loads Hello.class into memory
+🔹 Step 2: Bytecode Verifier
+
+Checks correctness (security, format)
+🔹 Step 3: Interpreter / JIT Compiler
+
+Converts bytecode into machine code
+🔹 Step 4: Execution
 
 String:-
 ----------------------------------------------------------------------------------------------------------------------
@@ -364,10 +400,6 @@ o Using this(): To call another constructor of the same class.
 o Using super(): To call a constructor of the parent class. super() or super(args) must
 be the first statement in a child class constructor.
 
-Others Concepts -
-
-finalize: - Map is part of the Java Collections Framework, but it is not a subtype of Collection.
-
 Collection:-
 ----------------------------------------------------------------------------------------------------------
 Java Collection Framework (JCF) is a set of classes and interfaces that provide ready-made data structures
@@ -444,3 +476,12 @@ TreeMap – sorted by keys
 Typical use case:
 
 When data needs to be stored as key–value pairs (e.g., username → password).
+
+Others Concepts -
+--------------------------------------------------------------------------------------------------------
+
+finalize: - Map is part of the Java Collections Framework, but it is not a subtype of Collection.
+
+System.out.println(10 + 20 + "Sanu" + 10 + 20); // 30Sanu1020
+
+In Java, expressions are evaluated left to right.
