@@ -99,8 +99,11 @@ float f = Float.parseFloat(s);
 String s = "10.5";
 double f = Double.parseDouble(s);
 
-## Regular Expressions - Refer Regular Expression Folder to see photos ##
+## Regular Expressions - Result will come as true and false ##
 -------------------------------------------------------------------------------------------------------------------
+
+** Note --> Refer Regular Expression Folder to know more **
+-----------------------------------------------------------
 
 String s = "s";
 
