@@ -31,43 +31,42 @@ str.indexOf("l");
 str.lastIndexOf("l");
 str.startsWith("He");
 str.endsWith("lo");
+
+## Operations on String ##
 ----------------------------------------------------------------------
 
-# Operations on String #
-----------------------------------------------------------------------
-
-* Using Substring -
+# Using Substring -
 -------------------
 String sub = str.substring(1); // "ello"
 String sub2 = str.substring(1, 4); // "ell"
 
-* Using Replace -
+# Using Replace -
 ----------------
 str.replace("l", "x"); // "Hexxo"
 str.replaceAll("\s+", "_"); // regex replace spaces
 
-* Using Trim -
+# Using Trim -
 --------------
 "  Hello  ".trim(); // "Hello"
 
-* Split of String -
+# Split of String -
 -------------------
 String[] parts = "a,b,c".split(",");
 
-* String to Char Array -
+# String to Char Array -
 ------------------------
 char[] arr = str.toCharArray();
 
-* Using Join -
+# Using Join -
 --------------
 String joined = String.join("-", "a", "b", "c"); // "a-b-c"
 
-* Empty & Blank Check -
+# Empty & Blank Check -
 -----------------------
 str.isEmpty();
 str.isBlank(); // Java 11+
 
-* Case Conversion -
+# Case Conversion -
 -------------------
 str.toUpperCase();
 str.toLowerCase();
@@ -100,7 +99,7 @@ float f = Float.parseFloat(s);
 String s = "10.5";
 double f = Double.parseDouble(s);
 
-Regular Expressions - Refer Regular Expression Folder to see photos
+## Regular Expressions - Refer Regular Expression Folder to see photos ##
 -------------------------------------------------------------------------------------------------------------------
 
 String s = "s";
@@ -143,9 +142,10 @@ char[] grades = {'A', 'B', 'C'};
 //length
 int length = arr.length;
 
-Collections -
+## Collections ## 
 -------------------------------------------------------------------------------------------------------------------
-List -
+# List -
+--------
 
   List<String> list = new ArrayList<>();
 
