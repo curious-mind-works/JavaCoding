@@ -146,78 +146,106 @@ char[] grades = {'A', 'B', 'C'};
 int length = arr.length;
 
 ## Collections ## 
--------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+
 # List -
 --------
+List<String> list = new ArrayList<>(); // Declaration
 
-  List<String> list = new ArrayList<>(); // Declaration
+// Adding Elements
+list.add("Java");
+list.add("Selenium");
+list.add("Java"); // Allows duplicates
+list.add(1, "Python"); // Insert at specific index
+
+// Accessing & Updating
+String item = list.get(0); // Get element by index
+list.set(1, "Playwright"); // Update/replace element at index
+
+// Removing Elements
+list.remove(0); // Remove by index
+list.remove("Java"); // Remove by object value
+
+// Iterating a List
+// 1. Enhanced for-each loop
+for (String value : list) {
+    System.out.println(value);
+}
+// 2. Traditional for loop (with index)
+for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
+}
+// 3. Using Iterator
+Iterator<String> listIt = list.iterator();
+while (listIt.hasNext()) {
+    System.out.println(listIt.next());
+}
+
 
 # Set -
 -------
+Set<String> set = new HashSet<>(); // Declaration
 
- Set<String> set = new HashSet<>();
+// Adding Elements
+set.add("Java");
+set.add("Selenium");
+set.add("Java"); // Duplicate -> ignored, returns false
+set.addAll(Set.of("API", "TestNG")); // Add multiple elements
 
-        // add(element)
+// Checking Elements
+boolean hasJava = set.contains("Java"); // true
+boolean isEmpty = set.isEmpty(); // false
+int setSize = set.size(); // total elements
 
-        set.add("Java");
-        set.add("Selenium");
-        set.add("Java"); // duplicate → ignored
+// Removing Elements
+set.remove("Selenium"); // Removes specific element
+set.removeAll(Set.of("API", "TestNG")); // Removes collection of elements
 
-       // addAll(elements)
-
-        set.addAll(Set.of("API", "TestNG"));
-
-# Iterating a Set #
---------------------------------------------------------------------------------------------
-# Using Enhanced for-each loop -
---------------------------------
-
-for (String value : set) 
-{
-     System.out.println(value);
+// Iterating a Set
+// 1. Enhanced for-each loop
+for (String value : set) {
+    System.out.println(value);
+}
+// 2. Using Iterator
+Iterator<String> setIt = set.iterator();
+while (setIt.hasNext()) {
+    System.out.println(setIt.next());
 }
 
-# Using Iterator -
-------------------
-
-Iterator<String> it = set.iterator();
-while (it.hasNext())
-{
-     System.out.println(it.next());
-}
 
 # Map -
 -------
-       
 Map<Integer, String> map = new HashMap<>(); // Declaration
 
-        //Adding Elements to Map
+// Adding & Updating Elements
+map.put(1, "Java");
+map.put(2, "Selenium");
+map.put(3, "REST Assured");
+map.put(2, "TestNG"); // Duplicate key -> value gets replaced
+map.putIfAbsent(4, "API"); // Adds only if key 4 doesn't exist
 
-        //put(key, value)
-        map.put(1, "Java");
-        map.put(2, "Selenium");
-        map.put(3, "REST Assured");
+// Checking & Retrieving
+String val = map.get(1); // Returns "Java"
+String defaultVal = map.getOrDefault(99, "None"); // Returns "None" if key missing
+boolean hasKey = map.containsKey(1); // true
+boolean hasVal = map.containsValue("Java"); // true
+int mapSize = map.size(); // total size
 
-        //Duplicate key (value gets replaced)
-         map.put(2, "TestNG"); // Selenium replaced
+// Removing Elements
+map.remove(3); // Removes key 3 and its value
+map.remove(1, "Java"); // Removes key 1 only if value matches "Java"
 
-       // putIfAbsent()
-         map.putIfAbsent(4, "API");
-
-       // 1️ Using entrySet()
-        for (Map.Entry<Integer, String> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " = " + entry.getValue());
-        }
-
-       // 2️ Using keySet()
-        for (Integer key : map.keySet()) {
-            System.out.println(key + " = " + map.get(key));
-        }
-
-      // 3️ Using values()
-        for (String value : map.values()) {
-            System.out.println(value);
-        }
-    }
-
+// Iterating a Map
+// 1. Using entrySet()
+for (Map.Entry<Integer, String> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " = " + entry.getValue());
+}
+// 2. Using keySet()
+for (Integer key : map.keySet()) {
+    System.out.println(key + " = " + map.get(key));
+}
+// 3. Using values()
+for (String value : map.values()) {
+    System.out.println(value);
+}
 
