@@ -2,8 +2,8 @@ String
 --------------------------------------------------------------------------------------------------------
 
 Creation
-String str = "Hello";
-String str2 = new String("World");
+String str = "Hello";                     // String Literal
+String str2 = new String("World");        // String using new Keyword
 
 Length
 int len = str.length(); // number of characters
