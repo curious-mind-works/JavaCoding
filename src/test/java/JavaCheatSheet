@@ -150,8 +150,10 @@ int length = arr.length;
 # List -
 --------
 
-  List<String> list = new ArrayList<>();
+  List<String> list = new ArrayList<>(); // Declaration
 
+# Set -
+-------
 
  Set<String> set = new HashSet<>();
 
@@ -165,25 +167,29 @@ int length = arr.length;
 
         set.addAll(Set.of("API", "TestNG"));
 
-        //Iterating a Set
+# Iterating a Set #
+--------------------------------------------------------------------------------------------
+# Using Enhanced for-each loop -
+--------------------------------
 
-        //1️ Enhanced for-each loop
+for (String value : set) 
+{
+     System.out.println(value);
+}
 
-        for (String value : set) {
-            System.out.println(value);
-        }
+# Using Iterator -
+------------------
 
-        //2 Using Iterator
+Iterator<String> it = set.iterator();
+while (it.hasNext())
+{
+     System.out.println(it.next());
+}
 
-        Iterator<String> it = set.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        }
-
-    }
-
-   
-        Map<Integer, String> map = new HashMap<>();
+# Map -
+-------
+       
+Map<Integer, String> map = new HashMap<>(); // Declaration
 
         //Adding Elements to Map
 
