@@ -76,20 +76,21 @@ public class StringFunction {
 
        // Content is same ("Ankit")
 
-        String s1 = "Ankit";
-        String s2 = "An" + "kit";
+        String s5 = "Ankit";
+        String s6 = "An" + "kit";
 
-        System.out.println(s1 == s2); //true
+        System.out.println(s5 == s6); //true
 
-       // compile-time optimization → goes to String pool
+        // Reason: compile-time optimization → goes to String pool
 
-         String s1 = "Ankit";
-         String s2 = "An";
-         String s3 = s2 + "kit";
+            String s1 = "Ankit";
+            String s2 = "An";
+            String s3 = s2 + "kit";
 
-         System.out.println(s1 == s3); //false
+            System.out.println(s1 == s3); //false
 
-       // runtime concatenation → heap object
+
+// Reason: runtime concatenation → heap object
 
             
         String s = "Ankit";
