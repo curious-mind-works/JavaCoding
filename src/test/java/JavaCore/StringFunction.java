@@ -90,7 +90,7 @@ public class StringFunction {
             System.out.println(s1 == s3); //false
 
 
-// Reason: runtime concatenation → heap object
+        // Reason: runtime concatenation → heap object
 
             
         String s = "Ankit";
@@ -108,12 +108,12 @@ public class StringFunction {
        // Answer: Ankit Sharma
 
          
-    StringBuilder sb = new StringBuilder("Hello");
-    sb.append(" World");
+        StringBuilder sb = new StringBuilder("Hello");
+        sb.append(" World");
 
-    System.out.println(sb); //Mutable
+        System.out.println(sb); //Mutable
         
-   // Output: Hello World
+       // Output: Hello World
 
     String s1 = "Ankit";
 	String s2 = "Ankit";
@@ -161,10 +161,10 @@ public class StringFunction {
 	String s2 = new String("Ankit");
 	s2 = s1;
 		
-	System.out.println(s1);
-	System.out.println(s2);
-	System.out.println(s1.equals(s2));
-	System.out.println(s1==s2);  
+	System.out.println(s1); //Ankit
+	System.out.println(s2); //Ankit
+	System.out.println(s1.equals(s2)); //true
+	System.out.println(s1==s2);  //true
 
    //s1 → String Pool
    //s2 → Heap initially
