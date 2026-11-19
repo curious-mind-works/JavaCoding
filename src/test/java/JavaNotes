@@ -42,6 +42,50 @@ Checks correctness (security, format)
 Converts bytecode into machine code
 🔹 Step 4: Execution
 
+Execution:-
+----------------------------------------------------------------------------------------------------------------------
+Java execution starts when you run the java command with your compiled class name,
+triggering a precise sequence inside the Java Virtual Machine (JVM) before your main method runs.
+
+1. JVM Initialization & Class Loading:-
+---------------------------------------
+When you execute java MainClass, the OS starts the JVM process. The JVM's ClassLoader subsystem locates MainClass.class 
+and loads its bytecode into the Method Area of JVM memory.
+
+2. Linking (Verify, Prepare, Resolve):-
+---------------------------------------
+Before any code in the class can run, the JVM links it in three sub-steps:
+
+Verification:- The Bytecode Verifier checks that the .class file is structurally valid and doesn't violate Java's security
+or type-safety rules.
+
+Preparation:- The JVM allocates memory for all static variables in the class and assigns them default values
+(e.g., 0 for int, null for objects, false for boolean)—not their actual assigned values yet.
+
+Resolution:- Symbolic references (like method or class names) in the constant pool are replaced with direct memory references.
+
+3. Initialization (static blocks & variables):-
+-----------------------------------------------
+The JVM executes all static variable assignments and static { ... } blocks in the exact order they appear in the source code
+from top to bottom. This is why static blocks run before main().
+
+4. Invoking main():-
+--------------------
+Once the class is initialized, the JVM's Execution Engine creates the Main Thread (and its corresponding JVM Stack) 
+and invokes the entry point:
+
+public static void main(String[] args):-
+----------------------------------------
+
+public:- Accessible to the JVM from outside the class.
+
+static:- The JVM can call it directly on the class without instantiating an object first.
+
+void:- Returns nothing to the JVM.
+
+String[] args:- Accepts command-line arguments passed during startup.
+
+
 String:-
 ----------------------------------------------------------------------------------------------------------------------
 In Java, String is a class, not a primitive type. Strings are sequences of characters.
