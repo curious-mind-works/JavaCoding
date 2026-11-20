@@ -455,6 +455,9 @@ to store and manipulate groups of objects efficiently.
 > Includes algorithms (sorting, searching, iteration) via the Collections utility class.
 > Improves code reusability and performance by reducing boilerplate code.
 
+** Note --> Refer Collections Folder to know more **
+-----------------------------------------------------------
+
 Types of Collections in Java : -
 
 Interfaces: -
