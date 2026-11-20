@@ -108,13 +108,13 @@ double f = Double.parseDouble(s);
 String s = "s";
 
 // [] - use for match a single character
-System.out.println(s.matches("[s]"));
+System.out.println(s.matches("[s]"));   //true
 
 // single character between range a-z
-System.out.println(s.matches("[a-z]"));
+System.out.println(s.matches("[a-z]"));  //true
 
 // single character can be in range
-System.out.println(s.matches("[a-zA-Z0-9]"));
+System.out.println(s.matches("[a-zA-Z0-9]"));  //true
 
 
 ## Array Declaration ## -
