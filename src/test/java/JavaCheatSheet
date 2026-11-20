@@ -116,6 +116,21 @@ System.out.println(s.matches("[a-z]"));  //true
 // single character can be in range
 System.out.println(s.matches("[a-zA-Z0-9]"));  //true
 
+// ^ - use for not in the range
+
+System.out.println(s.matches("[^s]"));   //false
+System.out.println(s.matches("[^a-z]"));  //false
+System.out.println(s.matches("[^a-zA-Z0-9]"));  //false
+
+Functions:-
+-----------
+
+?          matches the preceding element zero or one time                Regu?lar matches "Regular" and "Reglar"
+*          matches the preceding element zero or more times              ab*c matches "ac", "abc", "abbc", "abbbc", etc.
++          matches the preceding element one or more times               ab+c matches "abc", "abbc", "abbbc", etc.
+{m}        matches the preceding element exactly m times                 ab{2}c matches "abbc"
+{m,}       matches the preceding element minimum m times                 ab{2,}c matches "abbc", "abbbc", "abbbbc", etc.
+{m, n}     matches the preceding element minimum m and maximum n times   ab{2,3}c matches "abbc" and "abbbc"
 
 ## Array Declaration ## -
 -------------------------------------------------------------------------------------------------------------
