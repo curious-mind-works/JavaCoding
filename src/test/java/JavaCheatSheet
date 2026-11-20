@@ -102,7 +102,7 @@ double f = Double.parseDouble(s);
 ## Regular Expressions - Result will come as true and false ##
 -------------------------------------------------------------------------------------------------------------------
 
-** Note --> Refer Regular Expression Folder to know more **
+** Note --> Refer String_+_Regex Folder to know more **
 -----------------------------------------------------------
 
 String s = "s";
